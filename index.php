@@ -11,5 +11,11 @@
 <body>
     <?php include "header.php" ?>
     
+    <img src="background.png" class='img-fluid' id='brn' alt="">
+   
+    <h1 class='text-center ' > “Pour conquérir le marché,<br> vous devez d'abord conquérir votre environnement de travail.”</h1>
+    
+
+    
 </body>
 </html>
