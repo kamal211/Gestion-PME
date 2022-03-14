@@ -1,7 +1,7 @@
 <?php
 
-$db=new PDO('mysql:host=localhost;dbname=gestion-employées;charset=utf8','root','root');
-// $connectBd= new mysqli('localhost','root','','gestion-employées');
+// $db=new PDO('mysql:host=localhost;dbname=gestion;charset=utf8','root','');
+$connectBd= new mysqli('localhost','root','root','gestionemploye');
 
 // if($connectBd)
 // echo "<h1> Success </h1> ";

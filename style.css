@@ -5,13 +5,18 @@
     height: 100vh;
     position: fixed;
 } 
-
+#background-table
+{
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+}
 #background-ajout-employé
 {
    
-    width: 100%;
+    width: 10%;
     padding-bottom: -10%;
-   height: 20em;
+    height: 20em;
 
 }
 

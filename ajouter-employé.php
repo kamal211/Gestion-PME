@@ -14,39 +14,39 @@
 <form method='POST' action="géneration-form.php" class="row g-3">
   <div class="col-md-6">
     <label for="nom" class="form-label">Nom</label>
-    <input type="text" name="nom" class="form-control" id="nom">
+    <input type="text" name="nom" class="form-control" id="nom" placeholder="Nom" required>
   </div>
   <div class="col-md-6">
     <label for="Prénom" class="form-label">Prénom</label>
-    <input type="text" name="prénom" class="form-control" id="Prénom">
+    <input type="text" name="prénom" class="form-control" id="Prénom" placeholder="Prénom" required>
   </div>
   <div class="col-md-6">
     <label for="Matricule" class="form-label">Matricule</label>
-    <input type="text" name="matricule" class="form-control" id="Matricule" placeholder="">
+    <input type="text" name="matricule"  class="form-control" id="Matricule" maxlength="4" placeholder="Matricule d'employer" required>
   </div>
   <div class="col-md-6">
     <label for="Date-naissance" class="form-label">Date de naissance</label>
-    <input type="date" name="date-naissance" class="form-control" id="Date-naissance" placeholder="">
+    <input type="date" name="date-naissance" class="form-control" id="Date-naissance" placeholder="date de naissance" required>
   </div>
   <div class="col-md-6">
     <label for="Département" class="form-label">Département</label>
-    <input type="text" name="département" class="form-control" id="Département">
+    <input type="text" name="département" class="form-control" id="Département" placeholder="Département" required>
   </div>
   <div class="col-md-4">
     <label for="fonction" class="form-label">Fonction</label>
-    <input type="text" name="fonction" class="form-control" id="fonction">
+    <input type="text" name="fonction" class="form-control" id="fonction" placeholder="Fonction" required>
   
   </div>
   <div class="col-md-2">
     <label for="Salaire" class="form-label">Salaire</label>
-    <input type="number" name="salaire"  class="form-control" id="Salaire">
+    <input type="number" name="salaire"  class="form-control" min="10" step="10" id="Salaire" placeholder="Salaire" required>
   </div>
   <div class="col-12">
    
     <label class="form-label" for="gridCheck">
         insérer une photo
       </label>
-      <input class="form-control" name="photo" type="file" id="gridCheck">
+      <input class="form-control" name="photo" type="file" id="gridCheck" required>
     
   </div>
   <div class="col-12">
