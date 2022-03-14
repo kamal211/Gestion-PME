@@ -50,7 +50,7 @@
     
   </div>
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Ajouter un employé</button>
+    <button type="submit" name='btn' class="btn btn-primary">Ajouter un employé</button>
   </div>
 </form>
 </main>

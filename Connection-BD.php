@@ -1,5 +1,6 @@
 <?php
-$db=new PDO('mysql:host=localhost;dbname=gestion-employées;charset=utf8','root','');
+
+$db=new PDO('mysql:host=localhost;dbname=gestion-employées;charset=utf8','root','root');
 // $connectBd= new mysqli('localhost','root','','gestion-employées');
 
 // if($connectBd)
