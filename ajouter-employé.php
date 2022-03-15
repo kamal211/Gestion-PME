@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php include "header.php"?>
-<img src="background-ajout-employé.png" class='img-fluid' id='background-ajout-employé' alt="">
+<img src="background-ajout-employé.png" class='img-fluid' style="width: 100%;" id='background-ajout-employé' alt="">
 <main class="container">
 <form method='POST' action="géneration-form.php" class="row g-3">
   <div class="col-md-6">
