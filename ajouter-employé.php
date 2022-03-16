@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,14 +47,16 @@
     <label class="form-label" for="gridCheck">
         insérer une photo
       </label>
-      <input class="form-control" name="photo" type="file" id="gridCheck" required>
+      <input class="form-control" name="photo" type="url" id="gridCheck" required>
     
   </div>
   <div class="col-12">
     <button type="submit" name='btn' class="btn btn-primary">Ajouter un employé</button>
   </div>
 </form>
+
 </main>
 </body>
+
 </html>
 
