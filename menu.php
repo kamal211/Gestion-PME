@@ -12,15 +12,15 @@
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Liste des employées</a>
+          <a class="nav-link" href="liste-employer.php">Liste des employées</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="ajouter-employé.php">Ajouter un employé</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Rechercher un employé" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form method="POST" class="d-flex">
+        <input class="form-control me-2" type="search" name="valeurrechercher" placeholder="Rechercher un employé" aria-label="Search">
+        <button class="btn btn-outline-success" name="rechercher" type="submit">Search</button>
       </form>
     </div>
   </div>

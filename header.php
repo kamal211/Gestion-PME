@@ -1,4 +1,4 @@
 <header>
-    <?php include "menu.php" ?>
+    <?php require "menu.php" ?>
     
 </header>
