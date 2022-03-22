@@ -7,9 +7,28 @@
 
     <?php
     include "link.php";
+    // include 'Connection-BD.php';
+    // $requet="SELECT `matricule`, `nom`, `prénom`, `datenaissance`, `département`, `salaire`, `fonction`, `photo` FROM `employe`";
+    // $query= mysqli_query($connectBd,$requet)
+    function filterTable($query)
+    {
     include 'Connection-BD.php';
-    $requet="SELECT `matricule`, `nom`, `prénom`, `datenaissance`, `département`, `salaire`, `fonction`, `photo` FROM `employe`";
-    $query= mysqli_query($connectBd,$requet)
+    $filtrerTableau= mysqli_query($connectBd,$query);
+    return $filtrerTableau;
+   }
+
+
+  if (isset($_POST['rechercher']))
+  {
+    $recherche= htmlspecialchars($_POST['valeurrechercher']);
+    $query= "SELECT `matricule`, `nom`, `prénom`, `datenaissance`, `département`, `salaire`, `fonction`, `photo` FROM `employe` WHERE CONCAT(`matricule`,`nom`, `prénom`,`département`,`fonction`) LIKE'%".$recherche."%'";
+    $resultat= filterTable($query);
+  }
+  else
+  {
+    $query= "SELECT `matricule`, `nom`, `prénom`, `datenaissance`, `département`, `salaire`, `fonction`, `photo` FROM `employe`";
+    $resultat = filterTable($query);
+  }
     ?>
     <title>Liste des employées</title>
 </head>
@@ -25,7 +44,7 @@
     $hideHead=0;
    
 
-    while($rows=mysqli_fetch_assoc($query))
+    while($rows=mysqli_fetch_assoc($resultat))
     {
      $hideHead++;
      if($hideHead== 1){

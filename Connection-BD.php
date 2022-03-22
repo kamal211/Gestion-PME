@@ -1,6 +1,6 @@
 <?php
 
-// $db=new PDO('mysql:host=localhost;dbname=gestion;charset=utf8','root','');
+// $connectBd=new PDO('mysql:host=localhost;dbname=gestionemploye;charset=utf8','root','root');
 $connectBd= new mysqli('localhost','root','root','gestionemploye');
 
 // if($connectBd)
