@@ -30,6 +30,7 @@ $département = $_POST['département'];
 $fonction = $_POST['fonction'];
 $salaire = $_POST['salaire'];
 $photo = $_POST['photo'];
+<<<<<<< HEAD
 
 // echo "le ".$nom."et ".$prénom."et ".$matricule."et ".$date."et ".$département."et ".$fonction."et ".$salaire."et ".$photo;
 
@@ -37,12 +38,23 @@ $myRequet= "INSERT INTO `employe`(`matricule`,`nom`, `prénom`, `datenaissance`,
 // $myRequet= "INSERT INTO employé( `nom`, `prénom`) VALUES('bakali','rachid')" ;/*(nom =:nom,prénom=:prénom)";*/
 $query = mysqli_query($connectBd,$myRequet);
 
+=======
+include "link.php";
+// echo "le ".$nom."et ".$prénom."et ".$matricule."et ".$date."et ".$département."et ".$fonction."et ".$salaire."et ".$photo;
+include 'Connection-BD.php';
+$myRequet= "INSERT INTO `employe`(`matricule`,`nom`, `prénom`, `datenaissance`, `département`, `salaire`, `fonction`, `photo`) VALUES('$matricule','$nom','$prénom','$date','$département','$salaire','$fonction','$photo')";
+// $myRequet= "INSERT INTO employé( `nom`, `prénom`) VALUES('bakali','rachid')" ;/*(nom =:nom,prénom=:prénom)";*/
+$query = mysqli_query($connectBd,$myRequet);
+>>>>>>> e0f90704ddc42c5cb752085ed3af3a9521466330
 // $insert = $db->prepare($myRequet);
 // $insert ->execute(['nom' =>'bakali','prénom'=> 'aziz']);
 if($query == true && $reload == 1)
 {
     include "ajouter-employé.php";
+<<<<<<< HEAD
     
+=======
+>>>>>>> e0f90704ddc42c5cb752085ed3af3a9521466330
    
     $reload = 2;
 }
@@ -74,5 +86,9 @@ if($reload== 2)
     
 
 }
+<<<<<<< HEAD
 }
+=======
+
+>>>>>>> e0f90704ddc42c5cb752085ed3af3a9521466330
 ?>

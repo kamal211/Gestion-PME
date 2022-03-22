@@ -22,6 +22,7 @@
         <input class="form-control me-2" type="search" name="valeurrechercher" placeholder="Rechercher un employé" aria-label="Search">
         <button class="btn btn-outline-success" name="rechercher" type="submit">Search</button>
       </form>
+     
     </div>
   </div>
 </nav>

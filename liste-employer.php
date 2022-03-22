@@ -77,20 +77,32 @@
     
     ?>
     </table>
+<<<<<<< HEAD
     </div>
     <?php 
      if ($hideThead==0) { 
+=======
+    <?php 
+     if ($hideHead==0) { 
+>>>>>>> e0f90704ddc42c5cb752085ed3af3a9521466330
       echo "<script> 
       Swal.fire({
         icon: 'info',
         title: 'Oops...',
         text: 'Il n\'ya aucun employer pour le moment',
+<<<<<<< HEAD
         footer: `<a href='ajouter-employé.php'>Ajoutez un employer</a>`,
+=======
+        footer: `<a href='ajouter-employé.php'>Ajoutez un employer</a>`
+>>>>>>> e0f90704ddc42c5cb752085ed3af3a9521466330
        
       });
       
       </script>";
+<<<<<<< HEAD
       
+=======
+>>>>>>> e0f90704ddc42c5cb752085ed3af3a9521466330
     }
     ?>
    
