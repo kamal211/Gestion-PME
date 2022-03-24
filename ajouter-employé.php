@@ -15,7 +15,7 @@
 if(isset($_GET['id'])){
   include 'Connection-BD.php';
     $id=$_GET['id'];
-    $requet= "SELECT  FROM `employe` WHERE matricule ='$id'";
+    $requet= "SELECT * FROM `employe` WHERE matricule ='$id'";
     $query= mysqli_query($connectBd,$requet);
     $rows = mysqli_fetch_assoc($query);
     $nom = $rows['nom'];
@@ -59,18 +59,13 @@ $photo = $rows['photo'];
   </div>
   <div class="col-md-2">
     <label for="Salaire" class="form-label">Salaire</label>
-<<<<<<< HEAD
     <input type="number" name="salaire"  class="form-control" min="10" step="10" id="Salaire" placeholder="Salaire" value="<?php if (isset($_GET['id'])) echo $salaire; ?>" required>
-=======
-    <input type="number" name="salaire"  class="form-control" min="10" step="10" id="Salaire" placeholder="Salaire" required>
->>>>>>> e0f90704ddc42c5cb752085ed3af3a9521466330
   </div>
   <div class="col-12">
    
     <label class="form-label" for="gridCheck">
         insérer une photo
       </label>
-<<<<<<< HEAD
       <input class="form-control" name="photo" type="url" id="gridCheck" value="<?php if (isset($_GET['id'])) echo $photo; ?>" required>
     
   </div>
@@ -79,13 +74,6 @@ $photo = $rows['photo'];
    echo "Modifier l'employé"; 
     else 
      echo "Ajouter un employé"?></button>
-=======
-      <input class="form-control" name="photo" type="url" id="gridCheck" required>
-    
-  </div>
-  <div class="col-12">
-    <button type="submit" name='btn' class="btn btn-primary">Ajouter un employé</button>
->>>>>>> e0f90704ddc42c5cb752085ed3af3a9521466330
   </div>
 </form>
 
