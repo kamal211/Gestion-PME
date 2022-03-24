@@ -14,11 +14,12 @@ $salaire = $_POST['salaire'];
 $photo = $_POST['photo'];
 
   $id=$_POST['id'];
-  $requetUpdate= "UPDATE `employe` SET `matricule`=[$matricule],`nom`=[$nom],`prénom`=[$prénom],`datenaissance`=[$date],`département`=[$département],`salaire`=[$salaire],`fonction`=[$fonction],`photo`=[$photo] WHERE matricule ='$id'";
+//  = "UPDATE employe SET matricule = $matricule, nom = $nom, prénom = $prénom, datenaissance =$date, département =$département, salaire =$salaire, fonction =$fonction, photo =$photo WHERE matricule ='$id'";
+ $requetUpdate="UPDATE employe set matricule='$matricule',nom='$nom',prénom='$prénom',datenaissance='$date',département='$département',salaire='$salaire',fonction='$fonction',photo='$photo' where matricule='$id'";
   $queryUp = mysqli_query($connectBd,$requetUpdate);
-  if(isset($queryUp))
-  echo 'succesfull';
-  else  echo 'unsuccesfull'; 
+  // if(isset($queryUp))
+  // echo 'succesfull';
+  // else  echo 'unsuccesfull'; 
 }
 else{
 $reload=1;
@@ -36,6 +37,7 @@ $photo = $_POST['photo'];
 $myRequet= "INSERT INTO `employe`(`matricule`,`nom`, `prénom`, `datenaissance`, `département`, `salaire`, `fonction`, `photo`) VALUES('$matricule','$nom','$prénom','$date','$département','$salaire','$fonction','$photo')";
 // $myRequet= "INSERT INTO employé( `nom`, `prénom`) VALUES('bakali','rachid')" ;/*(nom =:nom,prénom=:prénom)";*/
 $query = mysqli_query($connectBd,$myRequet);
+
 
 // $insert = $db->prepare($myRequet);
 // $insert ->execute(['nom' =>'bakali','prénom'=> 'aziz']);
@@ -71,8 +73,8 @@ if($reload== 2)
     });
     
     </script></body>";
-    
+  }
 
 }
-}
+
 ?>
