@@ -17,9 +17,34 @@ $photo = $_POST['photo'];
 //  = "UPDATE employe SET matricule = $matricule, nom = $nom, prénom = $prénom, datenaissance =$date, département =$département, salaire =$salaire, fonction =$fonction, photo =$photo WHERE matricule ='$id'";
  $requetUpdate="UPDATE employe set matricule='$matricule',nom='$nom',prénom='$prénom',datenaissance='$date',département='$département',salaire='$salaire',fonction='$fonction',photo='$photo' where matricule='$id'";
   $queryUp = mysqli_query($connectBd,$requetUpdate);
-  // if(isset($queryUp))
-  // echo 'succesfull';
-  // else  echo 'unsuccesfull'; 
+  if($queryUp === true)
+  {
+    include "liste-employer.php";
+    echo "<body><script> 
+    Swal.fire({
+      icon: 'success',
+      title: 'Merci!',
+      text: 'L\'employé a été modifier avec succès',
+      footer: `<a href='liste-employer.php'>Vérifier la liste des employer</a>`
+    });
+    </script></body>";
+  }
+  
+  else 
+  {
+    header(Location : );
+Exit();
+    echo "<body><script> 
+Swal.fire({
+  icon: 'error',
+  title: 'Echec d\'ajout',
+  text: 'La matricule que vous avez saisie est déja existe',
+  footer: `<a href='liste-employer.php'>Vérifier la liste des employer</a>`
+ 
+});
+
+</script></body>";
+  }
 }
 else{
 $reload=1;
@@ -48,7 +73,7 @@ if($query == true && $reload == 1)
    
     $reload = 2;
 }
-else
+else{
 include "ajouter-employé.php";
 echo "<body><script> 
 Swal.fire({
@@ -60,7 +85,7 @@ Swal.fire({
 });
 
 </script></body>";
-
+}
 if($reload== 2)
 {
     echo "<body><script> 
