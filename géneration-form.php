@@ -32,8 +32,6 @@ $photo = $_POST['photo'];
   
   else 
   {
-    header(Location : );
-Exit();
     echo "<body><script> 
 Swal.fire({
   icon: 'error',

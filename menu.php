@@ -19,10 +19,20 @@
         </li>
       </ul>
       <form method="POST" class="d-flex">
+
         <input class="form-control me-2" type="search" name="valeurrechercher" placeholder="Rechercher un employé" aria-label="Search">
-        <button class="btn btn-outline-success" name="rechercher" type="submit">Search</button>
+        <button class="btn btn-outline-success" name="rechercher"  type="submit">Search</button>
       </form>
+     <?php
      
+  // if (isset($_POST['rechercher'])){
+  //   include 'liste-employer.php'
+  //       // rechercher();
+  //       //  header('Location : http://localhost/Gestion-PME/liste-employer.php' );
+
+
+  //       }
+      ?>
     </div>
   </div>
 </nav>

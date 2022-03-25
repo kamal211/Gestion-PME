@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <?php
     include "link.php";
@@ -13,6 +14,7 @@
     $filtrerTableau= mysqli_query($connectBd,$query);
     return $filtrerTableau;
    }
+  
 
 
   if (isset($_POST['rechercher']))
@@ -20,19 +22,19 @@
     $recherche= htmlspecialchars($_POST['valeurrechercher']);
     $query= "SELECT `matricule`, `nom`, `prénom`, `datenaissance`, `département`, `salaire`, `fonction`, `photo` FROM `employe` WHERE CONCAT(`matricule`,`nom`, `prénom`,`département`,`fonction`) LIKE'%".$recherche."%'";
     $resultat= filterTable($query);
+ 
   }
   else
   {
     $query= "SELECT `matricule`, `nom`, `prénom`, `datenaissance`, `département`, `salaire`, `fonction`, `photo` FROM `employe`";
     $resultat = filterTable($query);
   }
+
     ?>
     <title>Liste des employées</title>
 </head>
 <body>
     <?php include "header.php" ?>
-    <!-- <img src="background-list-employer.jpg" class='img-fluid' id='background-table' alt=""> -->
- 
 
     <div class="table-responsive ">
     <table class="table" style="color:#006586;">
@@ -60,6 +62,8 @@
     </thead>';
    }
    $id=$rows['matricule'];
+   $nom =$rows['nom'];
+   $prenom =$rows['prénom'];
    
     echo '<tr>';
     echo '<td colspan="2"><img src="'.$rows['photo'].'" height="100" width="100" class="rounded mx-auto d-block"></td>';
@@ -70,12 +74,39 @@
     echo '<td class="text-center">'.$rows['département'].'</td>';
     echo '<td class="text-center">'.$rows['fonction'].'</td>';
     echo '<td class="text-center">'.$rows['salaire'].'</td>';
-    echo '<td colspan="2" class="text-center"><a class="btn btn-outline-success btn-sm me-1"  href="ajouter-employé.php?id='.$id.'">Modifier</a><a href="delete.php?id='.$id.'" type="button" onclick="alertDelete()" class="btn btn-outline-danger btn-sm">Supprimer</a></td>';
+    echo '
+    <td colspan="2" class="text-center">
+    <a class="btn btn-outline-success btn-sm me-1"  href="ajouter-employé.php?id='.$id.'">Modifier</a>
+    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Supprimer
+    </button>
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Êtes-vous sûr</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+    Est-ce que vous voulez vraiment supprimer l\'employer'.$_POST['id'].'
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+    <a href="delete.php?id='.$id.'" type="button" class="btn btn-outline-danger btn-sm">Oui</a>
+    
+    </div>
+    </div>
+    </div>
+    </div>
+    </td>';
     echo '</tr>';
-    }
-    
-    
-    ?>
+  }
+  ?>
+
+  
+  <!-- Button trigger modal -->
+  <!-- Modal -->
     </table>
     </div>
     <?php 
@@ -112,6 +143,6 @@
     
   </tbody> -->
 
-    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
