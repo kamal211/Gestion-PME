@@ -9,7 +9,9 @@
     <title>Gestion PME</title>
 </head>
 <body>
-    <?php require "header.php" ?>
+    <?php require "header.php"
+    
+    ?>
     
     <img src="background.png" class='img-fluid' id='background-home' alt="">
    

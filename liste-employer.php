@@ -19,10 +19,11 @@
 
   if (isset($_POST['rechercher']))
   {
+ 
     $recherche= htmlspecialchars($_POST['valeurrechercher']);
     $query= "SELECT `matricule`, `nom`, `prénom`, `datenaissance`, `département`, `salaire`, `fonction`, `photo` FROM `employe` WHERE CONCAT(`matricule`,`nom`, `prénom`,`département`,`fonction`) LIKE'%".$recherche."%'";
     $resultat= filterTable($query);
- 
+   
   }
   else
   {
@@ -77,32 +78,13 @@
     echo '
     <td colspan="2" class="text-center">
     <a class="btn btn-outline-success btn-sm me-1"  href="ajouter-employé.php?id='.$id.'">Modifier</a>
-    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Supprimer
-    </button>
+    <a href="delete.php?id='.$id.'" type="button" class="btn btn-outline-danger btn-sm">Supprimer</a>
     
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-    <div class="modal-header">
-    <h5 class="modal-title" id="exampleModalLabel">Êtes-vous sûr</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div class="modal-body">
-    Est-ce que vous voulez vraiment supprimer l\'employer'.$_POST['id'].'
-    </div>
-    <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
-    <a href="delete.php?id='.$id.'" type="button" class="btn btn-outline-danger btn-sm">Oui</a>
-    
-    </div>
-    </div>
-    </div>
-    </div>
     </td>';
     echo '</tr>';
   }
   ?>
+  
 
   
   <!-- Button trigger modal -->
